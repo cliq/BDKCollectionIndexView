@@ -204,6 +204,13 @@
     [self setBackgroundVisibility:YES];
 }
 
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:self];
+    [self setNewIndexForPoint:touchPoint];
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [self setBackgroundVisibility:NO];
 }
